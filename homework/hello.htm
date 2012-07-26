@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>hello miaodao</title>
+		<script src="http://assets.taobaocdn.com/yui/2.7.0/build/yuiloader/yuiloader-min.js" type="text/javascript"></script>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			function init(){
+				(function(){       
+					YAHOO.namespace("A.B");
+					YAHOO.A.B.testStr = "hello world";
+				})();
+
+				(function(){
+					alert(YAHOO.A.B.testStr);
+				})();
+			}
+
+			var loader = new YAHOO.util.YUILoader(); 
+			loader.require(['dom', 'event']);
+			if(init){
+				loader.onSuccess = init;
+			}
+			loader.insert();
+		</script>
+	</body>
+</html>
